@@ -1,0 +1,24 @@
+{{> /layout/header}}
+
+<div class="container mt-3">
+
+ <!-- 게시글 아이템 시작 -->
+  {{#posts.content}}
+    <div class="card mb-3">
+        <div class="card-body">
+          <h4 class="card-title"> </h4>
+          <a href="/post/{{id}}" class="btn btn-primary">상세보기</a>
+        </div>
+      </div>
+      {{/posts.content}}
+      <!-- 게시글 아이템 끝 -->
+
+      <ul class="pagination justify-content-center"> 
+          <li class="page-item {{#posts.first}} disabled {{/posts.first}}"><a class="page-link" href="?page={{prevPage}}">이전</a></li>
+          <li class="page-item {{#posts.last}} disabled {{/posts.last}}"><a class="page-link" href="?page={{nextPage}}">다음</a></li>
+        </ul>
+
+</div>
+<!-- 컨테이너 끝 -->
+
+{{> /layout/footer}}
